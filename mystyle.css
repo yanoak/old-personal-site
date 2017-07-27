@@ -1,0 +1,143 @@
+body {
+text-align:center;
+/*background-color: #fff;*/
+background-color: #707070;
+font-family: 'Roboto', sans-serif;
+}
+
+p, li {
+text-align:justify;
+color: #F0F0F0;
+font-size: 14px;
+}
+
+li {
+padding-bottom: 20px;
+padding-top: 0px;	
+}
+
+#page-wrap {
+width: 530px;
+margin: 0 auto;
+}
+
+h3 {
+text-decoration: none;
+font-family: 'Roboto', sans-serif;
+font-weight: 300;
+/*font-family: 'Muli', sans-serif;*/
+/*text-align: left;*/
+/*color: #000;*/
+color: #F0F0F0;
+/*text-transform: uppercase;*/
+font-size: 26px;
+letter-spacing: -1px;
+margin-bottom: 0;
+}
+
+h4 {
+font-family: 'Muli', sans-serif;
+font-weight: normal;
+/*text-align: left;*/
+/*color: #000;*/
+color: #F0F0F0;
+font-size: 16px;
+}
+
+.subheading {
+font-family: 'Roboto', sans-serif;
+font-weight: normal;
+/*text-align: left;*/
+/*color: #000;*/
+color: #F0F0F0;
+font-size: 20px;
+}
+
+a {
+
+text-decoration: none;
+color: #aaa;
+/* color: #444; */
+transition: .3s all ease-out;
+-webkit-transition: .3s all ease-out;
+-moz-transition: .3s all ease-out;
+}
+
+a:hover {
+color: rgba(0, 0, 0, 0.5);
+/*color: #99ccff;*/
+}
+
+
+
+.rectbarHolder {
+	margin: 5 3px;
+	display: inline-block;
+}
+
+.rectbarOdd, .rectbarEven, .rectbarMinOdd, .rectbarMinEven, .circle{
+	background-color: #F0F0F0;
+	color: #888;
+	font-family: 'Roboto', sans-serif;
+	vertical-align: middle;
+	position: relative; 
+	/*top: -50%*/;
+	display: inline-block;
+
+	transition: .3s all ease-out;
+	-webkit-transition: .3s all ease-out;
+	-moz-transition: .3s all ease-out;
+}
+
+.rectbarMinOdd, .rectbarMinEven{
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+}
+
+.circle {
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    /*-moz-border-radius: 50%; 
+    -webkit-border-radius: 50%; 
+    border-radius: 50%;*/
+}
+
+.rectbarOdd, .rectbarEven {
+	width: 100px;
+	height: 200px;
+	line-height: 200px;
+}
+
+
+.circle:hover, .rectbarOdd:hover, .rectbarEven:hover,
+.rectbarMinOdd:hover, .rectbarMinEven:hover  {
+background-color: rgba(0, 0, 0, 0.1);
+color: #444;
+/*fill: lightgray;*/
+}
+
+.rectbarOdd
+{
+margin-top: 40px;
+}
+
+.highlight {
+background-color: rgba(0, 0, 0, 0.2);
+/*color: #99ccff;*/
+}
+
+/* ANIMATIONS ============================ */
+
+/*.det-anim.switching{*/
+/*.switching{
+  transition: all 1s linear;
+  -webkit-transition:all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  
+  position: relative;
+  opacity:0.5;
+}*/
+

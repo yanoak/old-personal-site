@@ -1,0 +1,114 @@
+<HTML ng-app="myApp">
+
+<head>
+<title> Yan's Homepage </title>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+
+<!-- SCRIPTS -->
+<script src="jquery-2.1.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-route.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-animate.js"></script>
+
+<!-- FONTS -->
+<link href='http://fonts.googleapis.com/css?family=Muli:300,400' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body ng-controller="menuCtrl">
+<br/>
+<h3> Hi, I'm Yan. Jack of all trades. </h3>
+<h4> Check out my <a href="http://www.twitter.com/yanoak">twitter</a> or <a href="docs/resume.pdf">resume</a>.</h4>
+
+<div ng-view id="page-wrap"></div>
+
+<script>
+var app = angular.module('myApp', ['ngAnimate', 'ngRoute']);
+
+function oddOrEven(i) {
+	if (i % 2 == 0) 
+		return "Even";
+	else 
+		return "Odd";
+}
+
+app.controller('menuCtrl', function($scope){
+	$scope.menutitlelist = ["about","writing","coding","organizing"];
+	$scope.menutitles = [];
+
+	$scope.minied = false;
+
+	for (i=0; i < $scope.menutitlelist.length; i++) {
+		$scope.menutitles.push(
+			{
+				"name": $scope.menutitlelist[i],
+				"oddeven": oddOrEven(i),
+				"highlight": ""
+			}
+		);
+	}
+});
+
+app.config(function ($routeProvider) {
+	$routeProvider
+	.when('/',
+	{
+		controller: 'menuCtrl',
+		templateUrl: 'default.html'
+	})
+	.when('/about',
+	{
+		controller: 'menuCtrl',
+		templateUrl: 'about.html'
+	})
+	.when('/writing',
+	{
+		controller: 'menuCtrl',
+		templateUrl: 'writing.html'
+	})
+	.when('/coding',
+	{
+		controller: 'menuCtrl',
+		templateUrl: 'coding.html'
+	})
+	.when('/organizing',
+	{
+		controller: 'menuCtrl',
+		templateUrl: 'organizing.html'
+	})
+	.otherwise({ redirectTo: '/'});
+
+});
+
+app.directive('blackFlagBars', ['$location', function($animate){
+	function link(scope, element, attrs) {
+		console.log(location.hash.slice(2));
+
+		for (i = 0; i<scope.info.length; i++) {
+			if (location.hash.slice(2) == scope.info[i].name) {
+				scope.info[i].highlight = "highlight";	
+			}
+			else {
+				scope.info[i].highlight = "";		
+			}	
+		}
+		
+		
+	}
+
+	return {
+		restrict: 'E',
+		scope: {
+			info: '=',
+			minied: '=',
+		},
+		link: link,
+		templateUrl: 'black-flag-bars.html'
+	};
+}]);
+
+</script>
+
+</body>
+</HTML>

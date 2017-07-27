@@ -1,0 +1,11 @@
+<a href="#/" ng-show="minied"><div class="circle">home</div></a> 
+
+<div ng-repeat="menutitle in info" class="rectbarHolder">
+	<a href="#/{{menutitle.name}}">
+
+	<div class="rectbar{{menutitle.oddeven}}" ng-hide="minied"> {{menutitle.name}} </div> 
+	<div class="rectbarMin{{menutitle.oddeven}} {{menutitle.highlight}}" ng-show="minied"> {{menutitle.name}} </div> 
+
+</a>
+</div>
+ <!-- &#8592; -->
